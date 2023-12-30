@@ -1,0 +1,38 @@
+@import 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap';
+@import './assets/colors.scss';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Montserrat, sans-serif;
+}
+
+body {
+  background-color: $bg-color;
+  color: $c-text;
+
+  a {
+    color: $c-text-secondary;
+    transition: all 300ms ease;
+
+    &:hover {
+      color: $c-text-highlight;
+    }
+  }
+
+  .text-primary {
+    color: $c-text-primary;
+  }
+
+  .text-secondary {
+    color: $c-text-secondary;
+  }
+
+  h1, h2, h3 {
+    font-weight: bold;
+  }
+}
