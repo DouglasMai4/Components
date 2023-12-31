@@ -2,9 +2,29 @@
 import { ref } from 'vue';
 
 import Input from './components/Input.vue';
+import Select from './components/Select.vue';
 
 const name = ref('');
 const password = ref('');
+const option = ref('');
+
+const items = [
+  {
+    icon: 'ph:user',
+    name: 'Usuarios',
+    value: 'users'
+  },
+  {
+    icon: 'ph:file',
+    name: 'Documentos',
+    value: 'documents'
+  },
+  {
+    icon: 'ph:music-note',
+    name: 'Músicas',
+    value: 'musics'
+  },
+]
 </script>
 
 <template>
@@ -28,6 +48,12 @@ const password = ref('');
         type="password"
         v-model="password"
       />
+
+      <Select
+        label="Selecione"
+        :items="items"
+        @change="(value) => option = value"
+      />
     </section>
 
     <section>
@@ -37,6 +63,7 @@ const password = ref('');
 
       Nome: <span>{{ name }}</span>
       Senha: <span>{{ password }}</span>
+      Selecionado: <span>{{ option }}</span>
     </section>
   </main>
 </template>
