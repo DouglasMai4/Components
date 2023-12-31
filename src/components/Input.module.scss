@@ -1,0 +1,33 @@
+@import '../assets/colors.scss';
+
+.label {
+  display: flex;
+  gap: 0.3rem;
+  background-color: $bg-color;
+  padding: 0.3rem;
+  border-radius: 5px;
+  outline: 1px solid transparent;
+  transition: outline 200ms ease;
+
+  &:has(input:focus) {
+    outline-color: $c-secondary;
+
+    .icon {
+      color: $c-secondary-highlight;
+    }
+  }
+
+  .icon {
+    font-size: 1.5rem;
+  }
+
+  .input {
+    width: 100%;
+    font-size: 1rem;
+    background-color: transparent;
+    border: none;
+    color: $c-text-secondary;
+    outline: none;
+    caret-color: $c-secondary;
+  }
+}
