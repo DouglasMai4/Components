@@ -49,6 +49,20 @@ const items = [
         v-model="password"
       />
 
+      <div class="select-container">
+        <Select
+          label="Selecione"
+          :items="items"
+          @change="(value) => option = value"
+        />
+
+        <Select
+          label="Selecione"
+          :items="items"
+          @change="(value) => option = value"
+        />
+      </div>
+
       <Select
         label="Selecione"
         :items="items"
@@ -91,6 +105,11 @@ const items = [
 
       &:last-child {
         border-radius: 0 10px 10px 0;
+      }
+
+      .select-container {
+        display: flex;
+        gap: 0.5rem;
       }
     }
   }
