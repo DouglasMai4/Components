@@ -1,0 +1,49 @@
+@import '../assets/colors.scss';
+
+.label {
+  display: flex;
+  gap: 0.3rem;
+  background-color: $bg-color;
+  padding: 0.3rem;
+  border-radius: 5px;
+  outline: 1px solid transparent;
+  transition: outline 200ms ease;
+
+  &:has(input:focus) {
+    outline-color: $c-secondary;
+
+    .icon {
+      color: $c-secondary-highlight;
+    }
+  }
+
+  .icon {
+    font-size: 1.5rem;
+  }
+
+  .input {
+    width: 100%;
+    font-size: 1rem;
+    background-color: transparent;
+    border: none;
+    color: $c-text;
+    outline: none;
+    caret-color: $c-secondary;
+  }
+
+  .showBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    color: $c-text;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 200ms ease;
+
+    &:hover {
+      color: $c-text-secondary;
+    }
+  }
+}

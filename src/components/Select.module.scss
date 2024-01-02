@@ -1,0 +1,70 @@
+@import '../assets/colors.scss';
+.selectContainer {
+  position: relative;
+  width: 100%;
+
+  .button {
+    display: flex;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: $bg-color;
+    color: $c-text;
+    border: none;
+    border-radius: 5px;
+    padding: 0.3rem;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    outline: 1px solid transparent;
+    transition: outline 200ms ease;
+    
+    &:focus {
+      outline-color: $c-secondary;
+      color: $c-text-secondary;
+    }
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: absolute;
+    margin-top: 0.5rem;
+    left: 0;
+    width: 100%;
+    background-color: $bg-color-t;
+    box-shadow: 0 0 15px rgb(0 0 0 / 50%);
+    padding: 0.5rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    list-style: none;
+    backdrop-filter: blur(10px);
+    max-height: 10rem;
+    overflow-y: auto;
+    z-index: 999;
+
+    .listItem {
+      width: 100%;
+      font-size: 1rem;
+
+      .itemButton {
+        display: flex;
+        gap: 0.5rem;
+        width: 100%;
+        font-size: 1rem;
+        background-color: transparent;
+        border: none;
+        color: $c-text;
+        cursor: pointer;
+        padding: 0.3rem;
+        border-radius: 5px;
+        transition: all 200ms ease;
+
+        &:hover {
+          background-color: $bg-color-s;
+          color: $c-text-highlight;
+        }
+      }
+    }
+  }
+}
