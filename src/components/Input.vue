@@ -12,11 +12,21 @@ const emit = defineEmits(['update:modelValue'])
     <input
       :id="id"
       v-bind="$attrs"
-      :type="type"
+      :type="componentType"
       :class="styles.input"
       :value="modelValue"
       @input="emit('update:modelValue', ($event.target as HTMLInputElement).value)"
     >
+
+    <button
+      type="button"
+      :class="styles.showBtn"
+      v-if="type === 'password'"
+      @click="componentType === 'password' ? componentType = 'text' : componentType = 'password'"
+    >
+      <Icon v-if="componentType === 'password'" icon="ph:eye" :class="styles.showIcon" />
+      <Icon v-else icon="ph:eye-slash" :class="styles.hideIcon" />
+    </button>
   </label>
 </template>
 
@@ -27,6 +37,11 @@ const emit = defineEmits(['update:modelValue'])
       id: String,
       type: String,
       modelValue: String,
+    },
+    data() {
+      return {
+        componentType: this.type,
+      }
     }
   }
 </script>

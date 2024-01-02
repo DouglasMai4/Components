@@ -30,4 +30,20 @@
     outline: none;
     caret-color: $c-secondary;
   }
+
+  .showBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    color: $c-text;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 200ms ease;
+
+    &:hover {
+      color: $c-text-secondary;
+    }
+  }
 }
